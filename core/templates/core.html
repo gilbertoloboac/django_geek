@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/estilos.css" %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Página de Produtos</h1>
+    <h2>Curso: {{ curso }}</h2>
+    <h3>{{ outro }}</h3>
+    <div>
+    
+        <figure>
+            <img src="{% static "images/django.jpeg" %}" alt="">
+        </figure>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+                {% for produto in produtos  %}
+                    <tr>
+                        <td>{{produto.nome}}</td>
+                        <td>{{produto.preco}}</td>
+                        <td>{{produto.estoque}}</td> 
+                    </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+
+
+        
+      
+    </div>
+    
+</body>
+</html>
